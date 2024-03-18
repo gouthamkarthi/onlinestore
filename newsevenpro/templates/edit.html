@@ -1,0 +1,13 @@
+{% extends   'navbar.html'  %}
+
+
+{% block body %}
+
+<form method="post" enctype="multipart/form-data"> <!-- enc-type using for img using -->
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit">
+</form>
+<a class="btn btn-warning" href="/">Back</a>
+
+{% endblock %}

@@ -1,0 +1,51 @@
+<!--------------------------------------------------------->
+
+{% extends  'navbar.html' %} <!--connecting html pages-->
+
+<!--------------------------------------------------------->
+
+{% block body %} <!--add block body like this -->
+
+
+<div class="container-fluid" style="margin-top: 14px; margin-left: 4px; margin-bottom: 10px;">
+
+    <div class="row">
+        {% for i in movie_list %} <!--add html code inside the block body -->
+        <div class="col-md-3">
+            <div class="card" style="width: 18rem; margin-bottom: 21px;">
+
+                <img class="card-img-top" src="{{i.image.url}}" alt="{{i.name}}" height="250px" style="object-fit: cover;" >
+
+                <div class="card-body">
+                    <h5 class="card-title">{{i.name}}</h5>
+<!--                  <p class="card-text">{{i.desc}}</p>-->
+                    <a href="{% url  'newsevenapp:details'  i.id %}" class="btn btn-primary">Details</a>
+                    <a class="btn btn-danger" href="add/">Add Movie Details</a>
+                </div>
+
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+</div>
+
+
+
+{% endblock %} <!-- and end block like this -->
+
+<!--------------------------------------------------------->
+
+
+
+<!--{% for i in movie_list %}-->
+
+<!--must use this method #app urls name="details" using-->
+<!--                      Name space concept-->
+
+<!--<h1><a href="{% url  'newsevenapp:details'  i.id %}">{{i.name}}</a></h1><br>-->
+
+<!--<h1><a href="movie/{{i.id}}">{{i.name}}</a></h1><br>&ndash;&gt;-->
+
+<!--{% endfor %}-->
+
